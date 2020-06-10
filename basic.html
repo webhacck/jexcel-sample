@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jExcelサンプル</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
+    <link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" />
+    <script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+    <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" />
+  </head>
+  <body>
+    <div id="mytable"></div>
+
+    <script>
+    
+      const table = document.getElementById('mytable');
+      const data = [
+        [100,200,300,400,500],
+        [300,400,500,600,700]
+      ];
+
+      jexcel(table, {
+      
+        data:data
+        
+      })
+
+    </script>
+  </body>
+</html>
