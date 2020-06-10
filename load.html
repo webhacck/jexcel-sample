@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jExcelサンプル</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
+    <link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" />
+    <script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+    <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" />
+</head>
+  <body>
+
+    <button id="load">インポート</button><br/>
+    <div id="mytable"></div>
+
+    <script>
+      const load = document.getElementById('load');
+      const table = document.getElementById('mytable');
+
+      load.addEventListener('click', () => {
+
+        jexcel(table, {
+            csv: '/jexcel.csv',
+            csvHeaders: false,
+            columns: [
+                { type: 'text',     title:'テキスト',      width:120 },
+                // { type: 'dropdown', title:'ドロップダウン', width:160 },
+                { type: 'dropdown', title:'ドロップダウン', width:200, source:['項目１','項目２','項目３','項目４'] },
+                { type: 'calendar', title:'カレンダー',    width:120 },
+                { type: 'checkbox', title:'チェック',      width:80 },
+                { type: 'color',    title:'カラー',       width:120 }
+             ]
+        });
+        
+      })
+    </script>
+  </body>
+</html>
